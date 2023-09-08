@@ -7,12 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 	<Grid>
-		<ListView Name="StudentListView">
+		<ListView Name="studentListView">
 			<ListView.View>
 				<GridView>
-					<GridViewColumn Header="ID" Width="Auto" DisplayMemberBinding="{Binding ID}" />
-					<GridViewColumn Header="Name" Width="Auto" DisplayMemberBinding="{Binding Name}" />
-					<GridViewColumn Header="Average" Width="Auto" DisplayMemberBinding="{Binding AverageGrade}" />
+					<GridViewColumn Header="Student ID" Width="100" DisplayMemberBinding="{Binding ID}" />
+					<GridViewColumn Header="Student Name" Width="150" DisplayMemberBinding="{Binding Name}" />
+					<GridViewColumn Header="Student Scores" Width="100">
+						<GridViewColumn.CellTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding GradeCollection}" />
+							</DataTemplate>
+						</GridViewColumn.CellTemplate>
+					</GridViewColumn>
 				</GridView>
 			</ListView.View>
 		</ListView>

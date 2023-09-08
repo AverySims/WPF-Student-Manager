@@ -32,7 +32,7 @@ namespace StudentManager.View.CustomUserControls
 		public StudentList()
         {
             InitializeComponent();
-			StudentListView.ItemsSource = _students;
+			studentListView.ItemsSource = _students;
 		}
     }
 
@@ -50,6 +50,19 @@ namespace StudentManager.View.CustomUserControls
 			// If there are no grades, return 0
 			// Otherwise, return the average of the grades
 			get { return Grades.Count == 0 ? 0f : (float)Grades.Average(); }
+		}
+
+		public string GradeCollection
+		{
+			get
+			{
+				string temp = "";
+				foreach(var grade in Grades)
+				{
+					temp += $"{(float)grade} ";
+				}
+				return temp;
+			}
 		}
 
 		public int ID { get; set; }

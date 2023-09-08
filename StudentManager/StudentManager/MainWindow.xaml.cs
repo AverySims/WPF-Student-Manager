@@ -20,34 +20,51 @@ namespace StudentManager
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		public event EventHandler ViewStudents;
-		public event EventHandler AddStudent;
-		public event EventHandler RemoveStudent;
-		public event EventHandler EditStudent;
-
 		public MainWindow()
 		{
 			InitializeComponent();
 		}
 
-		private void Student_View(object sender, EventArgs e)
-		{
-			ViewStudents?.Invoke(this, EventArgs.Empty);
-		}
-
 		private void Student_Add(object sender, EventArgs e)
 		{
-			AddStudent?.Invoke(this, EventArgs.Empty);
+			//AddStudent?.Invoke(this, EventArgs.Empty);
 		}
 
 		private void Student_Remove(object sender, EventArgs e)
 		{
-			RemoveStudent?.Invoke(this, EventArgs.Empty);
+			//RemoveStudent?.Invoke(this, EventArgs.Empty);
 		}
 
 		private void Student_Edit(object sender, EventArgs e)
 		{
-			EditStudent?.Invoke(this, EventArgs.Empty);
+			//EditStudent?.Invoke(this, EventArgs.Empty);
+		}
+
+		private void Student_View(object sender, EventArgs e)
+		{
+			ChangeStudentViewVisibility();
+		}
+
+		private void ChangeStudentViewVisibility()
+		{
+			switch (StudentView.Visibility)
+			{
+				case Visibility.Visible:
+
+					StudentView.Visibility = Visibility.Collapsed;
+
+					break;
+				case Visibility.Hidden:
+
+					StudentView.Visibility = Visibility.Visible;
+
+					break;
+				case Visibility.Collapsed:
+
+					StudentView.Visibility = Visibility.Visible;
+
+					break;
+			}
 		}
 	}
 }
