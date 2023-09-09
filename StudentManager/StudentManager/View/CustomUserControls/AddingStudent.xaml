@@ -1,27 +1,27 @@
 ﻿<UserControl x:Class="StudentManager.View.CustomUserControls.AddingStudent"
 			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"	
-			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 			 xmlns:local="clr-namespace:StudentManager.View.CustomUserControls"
-			 mc:Ignorable="d" 
-			 d:DesignHeight="350" d:DesignWidth="200">
+			 mc:Ignorable="d"
+			 d:DesignHeight="500" d:DesignWidth="600">
 
 	<Grid Background="White">
 		<StackPanel>
 			<StackPanel	Orientation="Vertical" Margin="10">
-				<Label Content="Student	ID:"/>
-				<TextBox Name="studentIdTextBox"/>
+				<Label Content="Student	ID:" FontSize="16" />
+				<TextBox Name="studentIdTextBox" FontSize="16" />
 			</StackPanel>
 
 			<StackPanel	Orientation="Vertical" Margin="10">
-				<Label Content="Student	Name:"/>
-				<TextBox Name="studentNameTextBox"/>
+				<Label Content="Student	Name:" FontSize="16" />
+				<TextBox Name="studentNameTextBox" FontSize="16" />
 			</StackPanel>
 
 			<StackPanel	Orientation="Vertical" Margin="10">
-				<Label Content="Grades (comma-separated):"/>
-				<TextBox Name="gradesTextBox"/>
+				<Label Content="Grades (comma-separated):" FontSize="16" />
+				<TextBox Name="gradesTextBox" FontSize="16"	/>
 			</StackPanel>
 		</StackPanel>
 	</Grid>

@@ -17,6 +17,6 @@
 		<Button Grid.Row="0" Content="Add Student" FontSize="18" Margin="10" Name="AddButton" Click="AddButton_Click"/>
 		<Button Grid.Row="1" Content="Remove Student" FontSize="18" Margin="10" Name="RemoveButton" Click="RemoveButton_Click"/>
 		<Button Grid.Row="2" Content="Edit Student" FontSize="18" Margin="10" Name="EditButton" Click="EditButton_Click"/>
-		<Button Grid.Row="3" Content="View Student" FontSize="18" Margin="10" Name="ViewButton" Click="ViewButton_Click"/>
+		<Button Grid.Row="3" Content="View Students" FontSize="18" Margin="10" Name="ViewButton" Click="ViewButton_Click"/>
 	</Grid>
 </UserControl>

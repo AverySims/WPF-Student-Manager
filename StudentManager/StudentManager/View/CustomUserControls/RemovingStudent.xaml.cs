@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace StudentManager.View.CustomUserControls
 {
-	///	<summary>
-	///	Interaction	logic for StudentList.xaml
-	///	</summary>
-	public partial class StudentList : UserControl
-	{
-		public StudentList()
-		{
-			InitializeComponent();
-			studentListView.ItemsSource	= Student.ListOfStudents;
-		}
-	}
+    /// <summary>
+    /// Interaction logic for RemovingStudent.xaml
+    /// </summary>
+    public partial class RemovingStudent : UserControl
+    {
+        public RemovingStudent()
+        {
+            InitializeComponent();
+        }
+    }
 }

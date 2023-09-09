@@ -20,20 +20,29 @@ namespace StudentManager
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		private UserControl[] panels;
+		private UserControl activePanel;
+
 		public MainWindow()
 		{
 			InitializeComponent();
-			ChangePanelVisibility(StudentView);
+
+			panels = new UserControl[] { StudentView, StudentAdd, StudentRemove };
+
+			MenuButtons.ViewButtonClicked += Student_View;
+			MenuButtons.AddButtonClicked += Student_Add;
+			MenuButtons.RemoveButtonClicked += Student_Remove;
+			// add edit button event handler
 		}
 
 		private void Student_Add(object sender, EventArgs e)
 		{
-			//AddStudent?.Invoke(this, EventArgs.Empty);
+			SetActivePanel(StudentAdd);
 		}
 
 		private void Student_Remove(object sender, EventArgs e)
 		{
-			//RemoveStudent?.Invoke(this, EventArgs.Empty);
+			SetActivePanel(StudentRemove);
 		}
 
 		private void Student_Edit(object sender, EventArgs e)
@@ -43,28 +52,31 @@ namespace StudentManager
 
 		private void Student_View(object sender, EventArgs e)
 		{
-			ChangePanelVisibility(StudentView);
+			SetActivePanel(StudentView);
 		}
 
-		private void ChangePanelVisibility(UserControl panel)
+		private void ChangePanelVisibility(UserControl panel, Visibility newVisibility)
 		{
-			switch (StudentView.Visibility)
+			if (panel != null)
 			{
-				case Visibility.Visible:
+				panel.Visibility = newVisibility;
+			}
+		}
 
-					StudentView.Visibility = Visibility.Collapsed;
+		private void SetActivePanel(UserControl newActivePanel)
+		{
+			activePanel = newActivePanel;
 
-					break;
-				case Visibility.Hidden:
-
-					StudentView.Visibility = Visibility.Visible;
-
-					break;
-				case Visibility.Collapsed:
-
-					StudentView.Visibility = Visibility.Visible;
-
-					break;
+			foreach (var current in panels)
+			{
+				if (current != newActivePanel)
+				{
+					ChangePanelVisibility(current, Visibility.Collapsed);
+				}
+				else
+				{
+					ChangePanelVisibility(current, Visibility.Visible);
+				}
 			}
 		}
 	}
