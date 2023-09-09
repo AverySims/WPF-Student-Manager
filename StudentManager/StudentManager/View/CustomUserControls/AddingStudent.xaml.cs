@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace StudentManager.View.CustomUserControls
 {
-	///	<summary>
-	///	Interaction	logic for StudentList.xaml
-	///	</summary>
-	public partial class StudentList : UserControl
-	{
-
-		public int DesiredFontSize { get; } = 16;
-
-		public StudentList()
-		{
-			InitializeComponent();
-			studentListView.ItemsSource	= Student.ListOfStudents;
-		}
-	}
+    /// <summary>
+    /// Interaction logic for AddingStudent.xaml
+    /// </summary>
+    public partial class AddingStudent : UserControl
+    {
+        public AddingStudent()
+        {
+            InitializeComponent();
+        }
+    }
 }

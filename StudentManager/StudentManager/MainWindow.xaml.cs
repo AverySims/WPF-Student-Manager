@@ -23,6 +23,7 @@ namespace StudentManager
 		public MainWindow()
 		{
 			InitializeComponent();
+			ChangePanelVisibility(StudentView);
 		}
 
 		private void Student_Add(object sender, EventArgs e)
@@ -42,10 +43,10 @@ namespace StudentManager
 
 		private void Student_View(object sender, EventArgs e)
 		{
-			ChangeStudentViewVisibility();
+			ChangePanelVisibility(StudentView);
 		}
 
-		private void ChangeStudentViewVisibility()
+		private void ChangePanelVisibility(UserControl panel)
 		{
 			switch (StudentView.Visibility)
 			{
